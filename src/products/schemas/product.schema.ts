@@ -15,7 +15,7 @@ export class Product extends Document {
   @Prop({ required: true })
   stock: number;
 
-  @Prop({ type: Types.ObjectId, ref: 'User', required: true });
+  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
   vendedorID: Types.ObjectId;
 }
 
