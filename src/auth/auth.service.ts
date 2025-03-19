@@ -16,7 +16,6 @@ export class AuthService {
       throw new UnauthorizedException('Credenciales inválidas');
     }
 
-    // 🔥 Compara la contraseña ingresada con la almacenada (encriptada)
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       throw new UnauthorizedException('Credenciales inválidas');
@@ -30,8 +29,8 @@ export class AuthService {
     return {
       access_token: this.jwtService.sign(payload),
       user: {
-        id: user._id, // Asegúrate de que _id es el identificador correcto en tu base de datos
-        nombre: user.nombre, // Puedes agregar más datos si los necesitas
+        id: user._id, 
+        nombre: user.nombre, 
         email: user.email,
         rol: user.role
       }

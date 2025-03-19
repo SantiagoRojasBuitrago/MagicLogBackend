@@ -10,7 +10,7 @@ export class ProductsService {
 
 
   async create(data: any): Promise<Product> {
-    console.log('Datos recibidos:', data); // 🔍 Verifica el input antes de guardar
+    console.log('Datos recibidos:', data); 
   
     if (!data.vendedorID) {
       throw new Error('vendedorID es undefined antes de guardar.');
@@ -20,12 +20,12 @@ export class ProductsService {
   }
   
   async findAll() {
-    return this.productModel.find().populate('vendedorID'); ; // Retorna todos los productos
+    return this.productModel.find().populate('vendedorID'); ;
 
   }
   
   async findAllByVendor(vendedorID: string) {
-    return this.productModel.find({ vendedorID }); // Filtra por vendedorID
+    return this.productModel.find({ vendedorID }); 
   }
   
 
